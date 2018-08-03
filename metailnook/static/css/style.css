@@ -41,8 +41,8 @@ input, button {
 .cont {
   position: relative;
   height: 100%;
-  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg");
-  /*background-image:url("{% static "image/KNITTING.jpg" %}"); */
+  background-image: url("https://s3.us-east-2.amazonaws.com/metaildata/static/image/loginPico2.jpg");
+  
   background-size: cover;
   overflow: auto;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
