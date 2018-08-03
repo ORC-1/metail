@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|gown</title>
+    {% endblock %}
+     {% block content %}
+		<link href="{% static 'css/formcss.css' %}" rel="stylesheet">
+
+		<div class="content">
+		    <form method="post">
+    
+    {% csrf_token %}
+    <fieldset>
+		    <legend>Gown</legend>
+		    <label for="select">select customer:</label>
+		    <select class="custom-select custom-select-lg mb-3" name="name" id="select" >
+					  <option selected disabled="">select customer</option>
+    			{% for customers in gownx %}
+					  <option value="{{customers.id}}">{{customers.name}}</option>
+			    {% endfor %}
+				</select>
+				<br/>
+
+		    <label for="length">length (inch):</label>
+		    <input type="number" id="length" name="length"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="bust">bust(inch):</label>
+		    <input type="number" id="bust" name="bust"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span> 
+		    <label for="underburst">underburst(inch):</label>
+		    <input type="number" id="shoulder" name="shoulder"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="shoulder">shoulder(inch):</label>
+		    <input type="number" id="shoulder" name="shoulder"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+		     <label for="waist">waist (inch):</label>
+		    <input type="number" id="waist" name="waist"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="halflength">halflength(inch):</label>
+		    <input type="number" id="halflength" name="halflength"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span> <label for="Quaterlength">Quaterlength(inch):</label>
+		    <input type="number" id="Quaterlength" name="Quaterlength"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    
+		    <label for="hip">hip(inch):</label>
+		    <input type="number" id="hip" name="hip"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span><label for="sleeve">sleeve(inch):</label>
+		    <input type="number" id="sleeve" name="sleeve"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span><label for="Rsleeve">Rsleeve(inch):</label>
+		    <input type="number" id="Rsleeve" name="Rsleeve"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+	</fieldset>
+    <input type="submit" name="create" value="submit">
+
+
+    </form>
+</div>
+
+
+
+
+    
+    
+
+    {% endblock %}

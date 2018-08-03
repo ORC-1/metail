@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|trouser</title>
+    {% endblock %}
+    
+    {% block content %}
+		<link href="{% static 'css/formcss.css' %}" rel="stylesheet">
+
+		<div class="content">
+		    <form method="post">
+    
+    {% csrf_token %}
+    <fieldset>
+		    <legend>Trouser</legend>
+		    <label for="select">select customer:</label>
+		    <select class="custom-select custom-select-lg mb-3" name="name" id="select" >
+					  <option selected disabled="">select customer</option>
+    			{% for customers in trouserx %}
+					  <option value="{{customers.id}}">{{customers.name}}</option>
+			    {% endfor %}
+				</select>
+				<br/>
+
+		    <label for="length">length (inch):</label>
+		    <input type="number" id="length" name="length"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="waist">waist(inch):</label>
+		    <input type="number" id="waist" name="waist"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span> 
+		    <label for="tight">tight(inch):</label>
+		    <input type="number" id="tight" name="tight"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="roundkneel">Roundkneel(inch):</label>
+		    <input type="number" id="roundkneel" name="roundkneel"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+		     <label for="flap">flap (inch):</label>
+		    <input type="number" id="flap" name="flap"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="hip">hip(inch):</label>
+		    <input type="number" id="hip" name="hip"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span> 
+		    <label for="rSit">RSit(inch):</label>
+		    <input type="number" id="rSit" name="rSit"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    
+		    <label for="hip">hip(inch):</label>
+		    <input type="number" id="hip" name="hip"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span><label for="bottom">bottom(inch):</label>
+		    <input type="number" id="bottom" name="bottom"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+	</fieldset>
+    <input type="submit" name="create" value="submit">
+
+
+    </form>
+</div>
+
+
+
+
+    
+    
+
+    {% endblock %}
+

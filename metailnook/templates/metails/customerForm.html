@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|Customer</title>
+    {% endblock %}
+    
+    {% block content %}
+		<link href="{% static 'css/formcss.css' %}" rel="stylesheet">
+
+		<div class="content">
+		    <form method="post">
+    
+    {% csrf_token %}
+    <fieldset>
+		    <legend>Customer</legend>
+		    
+		    <label for="name">name:</label>
+		    <input type="text" id="name" name="name"
+		           placeholder="Customer's name must be unique from others" />
+		    <span class="validity"></span>
+
+		    <label for="lastname">lastname:</label>
+		    <input type="text" id="lastname" name="lastname"
+		           placeholder="Customer's lastname" />
+		    <span class="validity"></span>
+
+		    
+		    <label for="address">address:</label>
+		    <input type="text" id="address" name="address"
+		           placeholder="customer's address" />
+		    <span class="validity"></span>
+
+		    <label for="collectiondate">collection date:</label>
+		    <input type="datetime" id="collectiondate" name="collectiondate"
+		           placeholder="Order pick date eg:7/10/2018" />
+		    <span class="validity"></span>
+
+	</fieldset>
+    <input type="submit" name="create" value="submit">
+
+
+    </form>
+</div>
+
+
+
+
+    
+    
+
+    {% endblock %}

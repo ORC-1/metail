@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|Account</title>
+    {% endblock %}
+    
+    {% block content %}
+		<link href="{% static 'css/formcss.css' %}" rel="stylesheet">
+
+		<div class="content">
+		    <form method="post">
+    
+    {% csrf_token %}
+    <fieldset>
+		    <legend>Account Profile</legend>
+		    
+
+		    <label for="name">Name:</label>
+		    <input type="text" id="name" name="name"
+		           placeholder="Name" />
+		    <span class="validity"></span>
+
+		    <label for="Company_name">Company name:</label>
+		    <input type="text" id="Company_name" name="Company_name"
+		           placeholder="Business name" />
+		    <span class="validity"></span>
+
+		    
+		    <label for="position">Position:</label>
+		    <input type="text" id="position" name="position"
+		           placeholder="position in Company" />
+		    <span class="validity"></span>
+
+		    <label for="phone">Phone:</label>
+		    <input type="phone" id="phone" name="phone"
+		           placeholder="phone"  />
+		    <span class="validity"></span>
+
+		    <label for="Birthday">Birthday:</label>
+		    <input type="date" id="Birthday" name="Birthday"
+		           placeholder="Birthday"  />
+		    <span class="validity"></span>
+
+		    <label for="email">email:</label>
+		    <input type="email" id="email" name="email"
+		           placeholder="email"  />
+		    <span class="validity"></span>
+
+	</fieldset>
+    <input type="submit" name="create" value="submit">
+
+
+    </form>
+</div>
+
+{% for field in form %}
+			        {% for error in field.errors %}
+			            <div class="alert alert-danger">
+			                <strong>{{ error|escape }}</strong>
+			            </div>
+			        {% endfor %}
+			    {% endfor %}
+			    {% for error in form.non_field_errors %}
+			        <div class="alert alert-danger">
+			            <strong>{{ error|escape }}</strong>
+			        </div>
+			    {% endfor %}
+    
+    {%endblock%}

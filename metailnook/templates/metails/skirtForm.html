@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|skirt</title>
+    {% endblock %}
+    
+    {% block content %}
+		<link href="{% static 'css/formcss.css' %}" rel="stylesheet">
+
+		<div class="content">
+		    <form method="post">
+    
+    {% csrf_token %}
+    <fieldset>
+		    <legend>Skirt</legend>
+		    <label for="select">select customer:</label>
+		    <select class="custom-select custom-select-lg mb-3" name="name" id="select" >
+					  <option selected disabled="">select customer</option>
+    			{% for customers in skirtx %}
+					  <option value="{{customers.id}}">{{customers.name}}</option>
+			    {% endfor %}
+				</select>
+				<br/>
+
+		    <label for="length">length (inch):</label>
+		    <input type="number" id="length" name="length"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    <label for="halflength">halflength(inch):</label>
+		    <input type="number" id="halflength" name="halflength"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+		    
+		    <label for="waist">waist(inch):</label>
+		    <input type="number" id="waist" name="waist"
+		           placeholder="0.1 in increments" step="0.1" />
+		    <span class="validity"></span>
+
+	</fieldset>
+    <input type="submit" name="create" value="submit">
+
+
+    </form>
+</div>
+
+
+
+
+    
+    
+
+    {% endblock %}

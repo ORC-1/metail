@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|signup</title>
+    {% endblock %}
+    {% block stylesheet %}
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    {% endblock %}
+
+
+</head>
+{% block content %}
+<body>
+
+<div class="container">
+<form method="post" action="{% url "signup" %}" >
+    {% csrf_token %}
+<!-- This line inserts a CSRF token. -->
+    <table>
+        {{ form.as_table }}
+<!-- This line displays lines of the form.-->
+    </table>
+<p><input type="submit" value="Create" /></p>
+
+</form>
+    </div>
+
+</body>
+
+{% endblock %}
+</html>

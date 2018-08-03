@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>metail|payment</title>
+    {% endblock %}
+    
+    {% block content %}
+    {% csrf_token %}
+
+    {{ form.as_p}}
+
+
+
+
+
+    
+    {%endblock%}
