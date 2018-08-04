@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Views.
-# @login_required
+# #@login_required
 class FormView(ListView):
     context_object_name = 'form_list'    
     template_name = 'metails/forms.html'
@@ -42,7 +42,7 @@ class FormView(ListView):
 
 
 
-@login_required
+#@login_required
 def homepage(request):
 
     url = navbar_link.objects.all()
@@ -78,7 +78,7 @@ def signup(request):
 
 
 ##################################################VIEW_FOR_PROCESSING_SIGNIN_FORM##########################################################
-@login_required
+#@login_required
 def SignIn(request):
     if request.POST:
         form = SigninForm(request.POST)
@@ -113,7 +113,7 @@ def logout(request):
 #####################################FORMS_FOR_account_profile########################################################
 
 ###blouse_form############
-@login_required
+#@login_required
 def account_profile_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -131,7 +131,7 @@ def account_profile_form(request):
 #####################################FORMS_FOR_customer########################################################
 
 ###blouse_form############
-@login_required
+#@login_required
 def customer_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -150,7 +150,7 @@ def customer_form(request):
 #####################################FORMS_FOR_MEASURES########################################################
 
 ###blouse_form############
-@login_required
+#@login_required
 def blouse_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -168,7 +168,7 @@ def blouse_form(request):
 #####################################END_FORMS_FOR_blouse########################################################
 
 ###skirt_form############
-@login_required
+#@login_required
 def skirt_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -187,7 +187,7 @@ def skirt_form(request):
 
 #####################################END_FORMS_FOR_Skirt########################################################
 ###sokoto_form############
-@login_required
+#@login_required
 def sokoto_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -206,7 +206,7 @@ def sokoto_form(request):
 
 #####################################END_FORMS_FOR_sokoto########################################################
 ###gown_form############
-@login_required
+#@login_required
 def gown_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -225,7 +225,7 @@ def gown_form(request):
 
 #####################################END_FORMS_FOR_gown########################################################
 ###caftan_form############
-@login_required
+#@login_required
 def caftan_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -244,7 +244,7 @@ def caftan_form(request):
 
 #####################################END_FORMS_FOR_caftan########################################################
 ###shirt_form############
-@login_required
+#@login_required
 def shirt_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -263,7 +263,7 @@ def shirt_form(request):
 
 #####################################END_FORMS_FOR_shirt########################################################
 ###buba_form############
-@login_required
+#@login_required
 def buba_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -282,7 +282,7 @@ def buba_form(request):
 
 #####################################END_FORMS_FOR_########################################################
 ###suit_form############
-@login_required
+#@login_required
 def suit_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -302,7 +302,7 @@ def suit_form(request):
 
 #####################################END_FORMS_FOR_suit########################################################
 ###trouser_form############
-@login_required
+#@login_required
 def trouser_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
@@ -321,7 +321,7 @@ def trouser_form(request):
 
 
 #####################################END_FORMS_FOR_trouser########################################################
-@login_required
+#@login_required
 def payment_form(request):
     Bis = account_profile.objects.all()
     url = navbar_link.objects.all()
