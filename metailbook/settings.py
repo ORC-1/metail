@@ -53,7 +53,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'metailbook.urls'
-LOGIN_URL = ''
+LOGIN_URL = '/'
 # LOGIN_REDIRECT_URL =''
 
 TEMPLATES = [
