@@ -54,7 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'metailbook.urls'
 LOGIN_URL = 'SignIn'
-# LOGIN_REDIRECT_URL =''
+LOGIN_REDIRECT_URL ='/'
 
 TEMPLATES = [
     {
