@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^metail/$', include('metailnook.urls')),
     url(r'^measure/$', mviews.FormView.as_view(),name="form_list"),
     # url('(?P<pk>\d+)$', mviews.indexDetailView.as_view(), name='index'),
-    url(r'^$', mviews.SignIn, name='SignIn'),
+    url('', mviews.SignIn, name='SignIn'),
     url(r'^signup/$', mviews.signup, name='signup'),
     url(r'^home/$', mviews.homepage, name='homepage'),
     url(r'^account/$', mviews.account_profile_form, name='account'),
