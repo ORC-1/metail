@@ -21,5 +21,7 @@ from metailnook import views
 
 urlpatterns = [
     # url(r'^sign/$', views.SignIn, name='SignIn'),
+    url(r'^$', views.SignIn, name='SignIn'),
+
 
 ]

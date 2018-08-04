@@ -31,7 +31,9 @@
       <div class="login__check"></div>
 
           {% csrf_token %}
-
+          {% if form.errors %}
+            <p class="error"> Sorry, you have entered an incorrect username or password</p>
+         {% endif %}
       <div class="login__form">
         <div class="login__row">
           <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
@@ -56,9 +58,7 @@
 
       </div>
       </div>
-  {% if form.errors %}
-        <p class="error"> Sorry, you have entered an incorrect username or password</p>
-  {% endif %}
+  
        </form>
 
   </div>
