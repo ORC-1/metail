@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Views.
-@login_required
+# @login_required
 class FormView(ListView):
     context_object_name = 'form_list'    
     template_name = 'metails/forms.html'
