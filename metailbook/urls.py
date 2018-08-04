@@ -22,12 +22,12 @@ from metailnook import views as mviews
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url('', include('metailnook.urls')),
+    url(r'^metail/$', include('metailnook.urls')),
     url(r'^measure/$', mviews.FormView.as_view(),name="form_list"),
     # url('(?P<pk>\d+)$', mviews.indexDetailView.as_view(), name='index'),
-    url(r'^sign/$', mviews.SignIn, name='SignIn'),
+    url(r'^$', mviews.SignIn, name='SignIn'),
     url(r'^signup/$', mviews.signup, name='signup'),
-    url(r'^$', mviews.homepage, name='homepage'),
+    url(r'^home/$, mviews.homepage, name='homepage'),
     url(r'^account/$', mviews.account_profile_form, name='account'),
     url(r'^customer/$', mviews.customer_form, name='customer'),
     url(r'^blouse/$', mviews.blouse_form, name='blouse'),
