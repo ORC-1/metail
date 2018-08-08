@@ -10,12 +10,15 @@ from django.contrib.auth import authenticate, login, logout #Import for processi
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Views.
 # #@login_required
-class FormView(ListView):
+class FormView(LoginRequiredMixin,ListView):
+    login_url = '/login/'
+    redirect_field_name = '/home'
     context_object_name = 'form_list'    
     template_name = 'metails/forms.html'
     queryset  = customer.objects.all().order_by('-id')
