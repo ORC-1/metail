@@ -20,13 +20,13 @@ class  account_profile(models.Model):
     def __str__(self):
         return self.name
 
-class  staff(models.Model):
+class  staffs(models.Model):
     name = models.CharField(max_length=100, verbose_name="name", unique=True)
     Company_name = models.CharField(max_length=100, verbose_name="Company_name")
     position = models.CharField(max_length=100, verbose_name="position")
     phone = models.IntegerField()
     Birthday = models.DateField(verbose_name="Birthday", null=True, default=None, blank=True)
-    email = models.EmailField(verbose_name="Email")
+    email = models.EmailField(verbose_name="email")
     date_created = models.DateField(verbose_name="date_created", auto_now_add=True )
 
     def __str__(self):
