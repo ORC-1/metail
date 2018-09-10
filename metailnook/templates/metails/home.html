@@ -22,7 +22,175 @@
 
                         <div class="col-lg-6 col-xs-12 thumbnail"><a href="/measure"><img src="{% static "image/TakeMeasurement.jpg" %}" alt="Take Measurement"><small>Take Measurement</small></a>
                         </div>
-                        
+                         <!-- <iframe src="/measure" width="1050" height="500"></iframe>  -->
+                        <span>
+        <form method="get">
+          {% csrf_token %}
+          <select class="custom-select custom-select-lg mb-3" name="option" onchange="this.form.submit();" >
+            <option selected>select customer</option>
+          {% for customers in form_list2%}
+            <option value="{{customers.id}}">{{customers.name}}</option>
+          {% endfor %}
+        </select>
+        
+        </form>
+      </span>
+      
+
+      {% for name in names %}
+      <h1><span class="badge badge-info">customer: {{name.name}}</span></h1>
+      {% endfor %}
+
+      <table class="table table-hover">
+        <thead>
+        <th>Blouse </th>
+        <th>skirt</th>
+        <th>gown</th>
+        <th>trouser</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{% for data in blouse%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in skirt%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in gown%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in trouser%} length: {{data.length}}{%endfor%}</td>
+              
+            </tr>
+            <tr>
+              <td>{% for data in blouse%} bust: {{data.bust}}{%endfor%}</td>
+              <td>{% for data in skirt%} halflength: {{data.halflength}}{%endfor%}</td>
+              <td>{% for data in gown%} bust: {{data.bust}}{%endfor%}</td>
+              <td>{% for data in trouser%} waist: {{data.waist}}{%endfor%}</td>
+              
+            </tr>
+            <tr>
+              <td>{% for data in blouse%} shoulder: {{data.shoulder}}{%endfor%}</td>
+              <td>{% for data in skirt%} waist: {{data.waist}}{%endfor%}</td>
+              <td>{% for data in gown%} underburst: {{data.underburst}}{%endfor%}</td>
+              <td>{% for data in trouser%} tight: {{data.tight}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in blouse%} waist: {{data.waist}}{%endfor%}</td>
+              <td><!-- {% for data in skirt%} halflength: {{data.halflength}}{%endfor%} --></td>
+              <td>{% for data in gown%} shoulder: {{data.shoulder}}{%endfor%}</td>
+              <td>{% for data in trouser%} waist: {{data.waist}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in blouse%} neck: {{data.neck}}{%endfor%}</td>
+              <td><!--          --></td>
+              <td>{% for data in gown%} waist: {{data.waist}}{%endfor%}</td>
+              <td>{% for data in trouser%} roundkneel: {{data.roundkneel}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in blouse%} halflength: {{data.halflength}}{%endfor%}</td>
+              <td><!-- {% for data in skirt%} halflength: {{data.halflength}}{%endfor%} --></td>
+              <td>{% for data in gown%} halflength: {{data.halflength}}{%endfor%}</td>
+              <td>{% for data in trouser%} flap: {{data.flap}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in blouse%} Quaterlength: {{data.Quaterlength}}{%endfor%}</td>
+              <td><!-- {% for data in skirt%} halflength: {{data.halflength}}{%endfor%} --></td>
+              <td>{% for data in gown%} Quaterlength: {{data.Quaterlength}}{%endfor%}</td>
+              <td>{% for data in trouser%} hip: {{data.hip}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in blouse%} hip: {{data.hip}}{%endfor%}</td>
+              <td><!-- {% for data in skirt%} halflength: {{data.halflength}}{%endfor%} --></td>
+              <td>{% for data in gown%} hip: {{data.hip}}{%endfor%}</td>
+              <td>{% for data in trouser%} rSit: {{data.rSit}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in blouse%} sleeve: {{data.sleeve}}{%endfor%}</td>
+              <td><!-- {% for data in skirt%} halflength: {{data.halflength}}{%endfor%} --></td>
+              <td>{% for data in gown%} sleeve: {{data.sleeve}}{%endfor%}</td>
+              <td>{% for data in trouser%} bottom: {{data.waist}}{%endfor%}</td>
+              
+            </tr>
+            <tr>
+              <td>{% for data in blouse%} Rsleeve: {{data.Rsleeve}}{%endfor%}</td>
+              <td><!-- {% for data in skirt%} halflength: {{data.halflength}}{%endfor%} --></td>
+              <td>{% for data in gown%} Rsleeve: {{data.Rsleeve}}{%endfor%}</td>
+              <td><!-- {% for data in trouser%} waist: {{data.waist}}{%endfor%}x --></td>
+              
+            </tr>
+          </tbody>
+
+      </table>
+      <hr>
+      
+      <table class="table table-hover">
+        <thead>
+        <th>caftan </th>
+        <th>buba</th>
+        <th>sokoto</th>
+        <th>suit</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{% for data in caftan%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in buba%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in sokoto%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in suit%} length: {{data.length}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} underburst: {{data.underburst}}{%endfor%}</td>
+              <td>{% for data in buba%} neck: {{data.neck}}{%endfor%}</td>
+              <td>{% for data in sokoto%} halflength: {{data.halflength}}{%endfor%}</td>
+              <td>{% for data in suit%} neck: {{data.neck}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} neck: {{data.neck}}{%endfor%}</td>
+              <td>{% for data in buba%} length: {{data.length}}{%endfor%}</td>
+              <td>{% for data in sokoto%} bottom: {{data.bottom}}{%endfor%}</td>
+              <td>{% for data in suit%} collar: {{data.collar}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} pocketline: {{data.pocketline}}{%endfor%}</td>
+              <td>{% for data in buba%} shoulder: {{data.shoulder}}{%endfor%}</td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} halflength: {{data.halflength}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} shoulder: {{data.shoulder}}{%endfor%}</td>
+              <td>{% for data in buba%} sleeve: {{data.sleeve}}{%endfor%}</td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} burst: {{data.burst}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} bust: {{data.bust}}{%endfor%}</td>
+              <td>{% for data in buba%} Rsleeve: {{data.Rsleeve}}{%endfor%}</td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} shoulder: {{data.shoulder}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} Quaterlength: {{data.Quaterlength}}{%endfor%}</td>
+              <td><!-- {% for data in buba%} length: {{data.length}}{%endfor%} --></td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} armhole: {{data.armhole}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} sleeve: {{data.sleeve}}{%endfor%}</td>
+              <td><!-- {% for data in buba%} length: {{data.length}}{%endfor%} --></td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} sleeve: {{data.sleeve}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} Rsleeve: {{data.Rsleeve}}{%endfor%}</td>
+              <td><!-- {% for data in buba%} length: {{data.length}}{%endfor%} --></td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} Rsleeve: {{data.Rsleeve}}{%endfor%}</td>
+              
+            </tr><tr>
+              <td>{% for data in caftan%} length: {{data.length}}{%endfor%}</td>
+              <td><!-- {% for data in buba%} length: {{data.length}}{%endfor%} --></td>
+              <td><!-- {% for data in sokoto%} length: {{data.length}}{%endfor%} --></td>
+              <td>{% for data in suit%} waist: {{data.waist}}{%endfor%}</td>
+              
+            </tr>
+          </tbody>
+      </table>
+      
+
 
     {% endblock %}
 </body>

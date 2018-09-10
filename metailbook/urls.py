@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('', include('metailnook.urls')),
     url(r'^measure/$', mviews.FormView.as_view(),name="form_list"),
+    url(r'^measure2/$', mviews.etra_homeview.as_view(),name="form_list2"),
     # url('(?P<pk>\d+)$', mviews.indexDetailView.as_view(), name='index'),
     url(r'^signup/$', mviews.signup, name='signup'),
     url(r'^home/$', mviews.homepage, name='homepage'),

@@ -41,7 +41,31 @@ class FormView(LoginRequiredMixin,ListView):
        
         return context
 
-
+class etra_homeview(LoginRequiredMixin,ListView):
+    login_url = '/login/'
+    redirect_field_name = '/home'
+    context_object_name = 'form_list2'    
+    template_name = 'metails/home.html'
+    queryset  = customer.objects.all().order_by('-id')
+    
+    def get_context_data(self, **kwargs):
+        context = super(etra_homeview, self).get_context_data(**kwargs)
+        customers = self.request.GET.get('option') 
+        context['blouse'] = blouse.objects.filter(name = customers)
+        context['Homeurl'] = navbar_link.objects.all()
+        context['Bis'] = account_profile.objects.all()
+        context['names'] = customer.objects.filter(id = customers)
+        context['skirt'] = skirt.objects.filter(name = customers)
+        context['sokoto'] = sokoto.objects.filter(name = customers)
+        context['gown'] = gown.objects.filter(name = customers)
+        context['caftan'] = caftan.objects.filter(name = customers)
+        context['shirt'] = shirt.objects.filter(name = customers)
+        context['buba'] = buba.objects.filter(name = customers)
+        context['suit'] = suit.objects.filter(name = customers)
+        context['trouser'] = trouser.objects.filter(name = customers)
+        context['payment'] = payment.objects.filter(name = customers)
+       
+        return context
 
 
 @login_required
