@@ -122,7 +122,7 @@ class bubaForm(forms.ModelForm):
 	##############################suit_FORM###########################################
 class suitForm(forms.ModelForm):
 	class Meta:
-		model = suit 
+		model = suit
 
 		fields = ('name','length','neck','shoulder','armhole','sleeve','Rsleeve','waist',)
 
@@ -143,5 +143,3 @@ class paymentForm(forms.ModelForm):
 		fields = ('name','bill','advance',)
 
 	##############################END_payment_FORM###########################################
-
-

@@ -11,14 +11,14 @@
   {% block stylesheet %}
 
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-  
+
    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans'>
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
       <!--<link rel="stylesheet" href="css/style.css">--> <!-- Over written by base-->
    <!-- Main Styling -->
     {% endblock %}
-  
+
 </head>
 {% block content %}
 
@@ -27,13 +27,14 @@
   <div class="cont">
   <div class="live">
     <div class="login">
+      {% if form.errors %}
+        <p class="error"> Sorry, you have entered an incorrect username or password</p>
+     {% endif %}
       <form method="post" action="{% url "SignIn" %}" >
       <div class="login__check"></div>
 
           {% csrf_token %}
-          {% if form.errors %}
-            <p class="error"> Sorry, you have entered an incorrect username or password</p>
-         {% endif %}
+
       <div class="login__form">
         <div class="login__row">
           <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
@@ -51,6 +52,7 @@
 
         <button type="submit" class="login__submit" value="login">Sign in</button>
         <p class="login__signup">Don't have an account? &nbsp;<a href="/signup">Sign up</a></p>
+
       <!--{% for error in form %}-->
       <!--<p style="color: red">{{ error }}</p>-->
       <!--{% endfor %}-->
@@ -58,7 +60,7 @@
 
       </div>
       </div>
-  
+
        </form>
 
   </div>
@@ -69,7 +71,7 @@
   <!--Overwritten-->
 
 
-  
+
 
     <script  src="{% static 'js/login.js' %}"></script>
 
